@@ -1,0 +1,46 @@
+services:
+  # Backend API Service
+  - type: web
+    name: otaku-ghor-api
+    env: node
+    plan: free
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        fromService:
+          type: web
+          name: otaku-ghor-api
+          property: port
+      - key: DATABASE_TYPE
+        value: json
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_REFRESH_SECRET
+        generateValue: true
+      - key: CLOUD_NAME
+        value: dighwjhdz
+      - key: CLOUD_API_KEY
+        value: "817644997542614"
+      - key: CLOUD_API_SECRET
+        value: Hf8EhIXPRtrehiJXoNOmyH0EX3I
+      - key: GOOGLE_SHEETS_URL
+        value: https://script.google.com/macros/s/AKfycbyCXBqqdqaNp3vMKuKAHkhvRubvbkFU_Ik6w-ESPJAhPlaxkmATlKAmk8VjE_qY09M/exec
+      - key: GOOGLE_SHEETS_SECRET
+        value: otaku-ghor-2024
+
+  # Frontend React App Service
+  - type: web
+    name: otaku-ghor-frontend
+    env: static
+    plan: free
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          type: web
+          name: otaku-ghor-api
+          property: host
