@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1750578190765inn57v5qj",
+    "title": "Welcome to Otaku Ghor!",
+    "message": "Your admin panel is ready. Start uploading amazing anime products!",
+    "type": "system",
+    "priority": "medium",
+    "isRead": true,
+    "userId": null,
+    "icon": "🎌",
+    "createdAt": "2025-06-22T07:43:10.765Z",
+    "readAt": "2025-06-22T09:38:42.537Z"
+  },
+  {
+    "id": "17505781907680f9qjmfqm",
+    "title": "New Product Upload",
+    "message": "A new manga has been added to your inventory.",
+    "type": "product",
+    "priority": "low",
+    "isRead": true,
+    "userId": null,
+    "icon": "📚",
+    "createdAt": "2025-06-22T06:43:10.768Z",
+    "readAt": "2025-06-22T09:38:42.537Z"
+  },
+  {
+    "id": "1750578190768ovsj8yf0a",
+    "title": "Low Stock Alert",
+    "message": "Some products are running low on stock. Check inventory.",
+    "type": "inventory",
+    "priority": "high",
+    "isRead": true,
+    "userId": null,
+    "icon": "⚠️",
+    "createdAt": "2025-06-22T05:43:10.768Z",
+    "readAt": "2025-06-22T09:38:42.537Z"
+  }
+]
